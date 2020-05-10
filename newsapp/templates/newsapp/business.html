@@ -1,0 +1,58 @@
+{% extends 'newsapp/basic.html' %}
+{% block title %} Business {% endblock %}
+{% block body %}
+
+
+
+  <div class="container">
+<!--    <div class="row mb-2">-->
+
+      {% for i in catdata %}
+
+
+
+      <div class="container">
+      <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">{{ i.title }}</h2>
+        <h3 style="bold">By {{ i.author }} on {{ i.publishedAt }}</h3>
+
+        <p class="lead"><h5>{{ i.description }}</h5></p>
+        <a href="/blogpost/{{i.title}}" class="stretched-link"><h4>Continue Reading...</h4></a>
+
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="{{i.image }}" width="100%" height="100%" alt="{{i.title}}">
+      </div>
+    </div>
+</div>
+
+
+<div class="container">
+
+<hr class="featurette-divider">
+</div>
+
+<!--    <div class="col-md-6">-->
+<!--      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">-->
+<!--        <div class="col p-4 d-flex flex-column position-static">-->
+<!--          <strong class="d-inline-block mb-2 text-primary"> {{ i.title }} </strong>-->
+<!--          <h3 class="mb-0">By {{ i.author }}</h3>-->
+<!--          <div class="mb-1 text-muted">{{ i.publishedAt }}</div>-->
+<!--          <p class="card-text mb-auto"> {{ i.description }} </p>-->
+<!--          <a href="blogpost/{{i.post_id}}" class="stretched-link">Continue reading</a>-->
+<!--        </div>-->
+<!--        <div class="col-auto d-none d-lg-block">-->
+<!--          <img src="{{ i.image }}" class="bd-placeholder-img" width="200" height="250">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+      {% endfor %}
+
+
+
+    </div>
+  </div>
+  </div>
+
+{% endblock %}

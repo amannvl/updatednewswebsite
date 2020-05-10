@@ -1,0 +1,27 @@
+{% extends 'newsapp/basic.html' %}
+{% block title %} {{post.title}} {% endblock %}
+{% block body %}
+{% load static %}
+
+
+<div class="container" >
+<hr class="featurette-divider">
+</div>
+<div class="container">
+<div class="row featurette">
+        <h2 class="featurette-heading">{{post.title}}</h2>
+        <p class="lead">{{post.description}}.</p>
+    </div>
+          <img src="{{post.image}}" width="100%" height="100%" alt="{{post.title}}">
+
+
+    {% if post.content %}
+      <h2 class="featurette-heading">Main Content</h2>
+
+        <p class="lead">{{post.content}}.</p>
+    {% endif %}
+    <a href={{ post.url }}><h2>Continue reading the article from the source.</h2></a>
+</div>
+
+
+{% endblock %}
